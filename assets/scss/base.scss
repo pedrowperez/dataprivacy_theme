@@ -1,0 +1,202 @@
+.overflow-h {
+    overflow: hidden;
+}
+
+.p-r {
+    position: relative;
+}
+
+.p-a {
+    position: absolute;
+}
+
+.transition {
+    transition: $transition;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.full-height {
+    height: 100% !important;
+}
+
+.point {
+    cursor: pointer;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+.lower {
+    text-transform: lowercase;
+}
+
+.inherit {
+    text-transform: initial;
+}
+
+.m-a {
+    margin: auto;   
+}
+
+.p-0 {
+    padding: 0 !important;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.va-m {
+    vertical-align: middle;
+}
+
+.f-l-xs {
+    float: left;
+}
+
+.f-r-xs {
+    float: right;
+}
+
+.ta-c-xs {
+    text-align: center;
+}
+
+.ta-l-xs {
+    text-align: left;
+}
+
+.ta-r-xs {
+    text-align: right;
+}
+
+.ta-c-xs {
+    text-align: center;
+}
+
+.p-r-xs {
+    position: relative;
+}
+
+.p-a-xs {
+    position: absolute;
+}
+
+@for $i from 0 through 10 {
+    .bd-#{$i} {
+        border: #{$i}px solid;
+    }
+}
+
+@mixin base($class, $property, $amount, $increase) {
+    @for $i from 0 through $amount {
+        #{$class}-#{$i * $increase} {
+            #{$property}: #{$i * $increase}px !important;
+        }
+    }
+}
+
+@include base('.pt-xs', 'padding-top', 40, 5);
+@include base('.pb-xs', 'padding-bottom', 40, 5);
+@include base('.mt-xs', 'margin-top', 40, 5);
+@include base('.mb-xs', 'margin-bottom', 40, 5);
+
+@media only screen and (min-width: $sm) {
+    @include base('.pt-sm', 'padding-top', 25, 5);
+    @include base('.pb-sm', 'padding-bottom', 25, 5);
+    @include base('.mt-sm', 'margin-top', 20, 5);
+    @include base('.mb-sm', 'margin-bottom', 20, 5);
+    .p-r-sm {
+        position: relative;
+    }
+    .p-a-sm {
+        position: absolute;
+    }
+    .f-l-sm {
+        float: left;
+    }
+    .f-r-sm {
+        float: right;
+    }
+    .ta-c-sm {
+        text-align: center;
+    }
+    .ta-l-sm {
+        text-align: left;
+    }
+    .ta-r-sm {
+        text-align: right;
+    }
+    .d-ib {
+        display: inline-block !important;
+    }
+}
+
+@media only screen and (min-width: $md) {
+    @include base('.pt-md', 'padding-top', 30, 5);
+    @include base('.pb-md', 'padding-bottom', 20, 5);
+    @include base('.mt-md', 'margin-top', 20, 5);
+    .p-r-md {
+        position: relative;
+    }
+    .p-a-md {
+        position: absolute;
+    }
+    .f-l-md {
+        float: left;
+    }
+    .f-r-md {
+        float: right;
+    }
+    .ta-c-md {
+        text-align: center;
+    }
+    .ta-l-md {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: $lg) {
+    @include base('.pt-lg', 'padding-top', 10, 10);
+    .p-r-lg {
+        position: relative;
+    }
+    .p-a-lg {
+        position: absolute;
+    }
+    .f-l-lg {
+        float: left;
+    }
+    .f-r-lg {
+        float: right;
+    }
+    .ta-c-lg {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: $xs) {
+    .d-n-xs {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: $sm) {
+    .d-n-sm {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: $md) {
+    .d-n-md {
+        display: none;
+    }
+}
+
+.d-n-lg {
+    display: none;
+}
