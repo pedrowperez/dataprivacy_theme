@@ -1,0 +1,134 @@
+.navbar-brand {
+    display: flex;
+flex-direction: row;
+align-items: center;
+}
+.navbar-default .navbar-nav > li > a {
+// border-bottom: 1px solid $white;
+    padding-left: 0;
+padding-right: 0;
+margin-right: 14px;
+padding-bottom: 5px;
+transition: $transition;
+}
+
+.carousel {
+height: inherit;
+} 
+.carousel-inner > .item.next.left, .carousel-inner > .item.prev.right, .carousel-inner > .item.active
+{
+    opacity: 0.4;
+-webkit-filter: blur(4px);
+filter: blur(5px);
+}
+.carousel-inner {
+height: 100%;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+height: 540px;   max-width: 1090px;
+}
+.form-group {
+display: flex !important;
+align-items: center;
+justify-content: flex-end;
+}
+.item {
+overflow: hidden;
+height: 100%;
+img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+}
+.carousel-inner {
+    background: #0e5977;
+    
+}
+.carousel-inner img {
+margin: auto;
+
+}
+.carousel-indicators {
+width: 100%;
+margin-left: 0;
+left: 0; 
+top: 100px;
+padding: 0px 30px;
+}
+.carousel-indicators .active    {
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+
+
+}
+.carousel-indicators ol {
+display: inline-flex;
+}
+.carousel-indicators li {
+    text-indent: unset;
+width: 100%;
+height: auto;
+border: none;
+padding: 15px;
+font-size: 18px;
+text-align: left;
+    line-height: 1.7;
+
+}
+.carousel-indicators li a {
+color: white;
+
+}
+.carousel-indicators li:hover {
+
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+color: blue;
+
+}
+
+@media only screen and (max-width: 1199px) {
+.mynavbar .nav {
+    text-align: right;
+}
+}
+
+@media only screen and (max-width: $md) {
+   .align-item {
+    justify-content: flex-end !important;
+}
+.navbar-header {
+    width: 100%;
+}
+#searchform input[type=search] {
+    float: right;
+}
+ .navbar-default .navbar-nav > li > a {
+    font-size: 12px;
+}
+}
+@media only screen and (max-width: $sm) {
+.mynavbar .nav {
+    text-align: center;;
+}
+ .navbar-default .navbar-nav > li > a {
+    border: none;
+    font-weight: normal;
+    opacity: .8;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    border: none;
+    font-weight: bold;
+    opacity: 1;
+    color: white;
+}
+.nav > li {
+    display: block !important;
+}
+
+
+}

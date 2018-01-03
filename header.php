@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title> Blog Bepay | O futuro chegou ao seu bolso </title>
+        <title> Data Privacy </title>
         <!-- <link rel="stylesheet" href="<?= $home; ?>/normalize.css"> -->
         <link rel="stylesheet" href="<?= $home; ?>/assets/css/bootstrap.css">
         <link rel="stylesheet" href="<?= $home; ?>/assets/css/main.css">
@@ -24,8 +24,7 @@
                 <div class="navbar-left">
 
                     <a class="navbar-brand m-l" href="<?= get_home_url() ?>">
-                                <img src="<?= $home; ?>/assets/img/logo-bepay.svg">
-                        <p class="description  hidden-sm hidden-xs">Blog</p> </a>
+                                <img src="<?= $home; ?>/assets/img/logo.png"> </a>
 
                     <div class="col-xs-12 col-sm-12 hidden-sm hidden-md hidden-lg align-item teste">
                         <button class="search-button"> </button>
@@ -40,8 +39,6 @@
                 <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-2">
                     <div class="button-acc-hidden">
                         <?php get_search_form(); ?>
-                        
-                        <a href="http://portal.bepay.com/#/register" class="hidden-xs account-button" target="_blank"> CRIE SUA CONTA </a>
                     </div>
                 </div>
                 <?php

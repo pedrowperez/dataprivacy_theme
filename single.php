@@ -1,5 +1,6 @@
-<?php require('custom-menu.php') ?>
+
 <?php 
+get_header();
 
     $bg_color = array( 2 => "bgc-roxocat" , 3 => "bgc-bluecat", 4 => "bgc-orangecat", 5 => "bgc-greencat");
     $class_color = array( 2 => "c-roxocat" , 3 => "c-bluecat", 4 => "c-orangecat", 5 => "c-greencat");

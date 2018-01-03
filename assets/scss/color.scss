@@ -20,7 +20,9 @@
 }
 
 @include defineColor('white', $white);
+@include defineColor('white-scale', $white-scale);
 @include defineColor('grey-scale', $grey-scale);
 @include defineColor('greyban', $greyban);
+@include defineColor('bluegreen', $bluegreen);
+@include defineColor('greenclue', $greenclue);
 @include defineColor('grey', $grey);
-

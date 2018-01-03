@@ -21,8 +21,30 @@ a, a:hover, a:active, a:focus {
     text-decoration: none;
 }
 
+.ssba, .ssba a {
+        text-decoration: none;
+    border: 0;
+    background: none;
+    font-family: Indie Flower;
+    font-size: 20px;
+    font-weight: bold;
+}
+.ssba img {
+        width: 50px;
+    padding: 6px;
+    border: 0;
+    box-shadow: none !important;
+    display: inline !important;
+    vertical-align: middle;
+}
 
 @media only screen and (min-width: $xs) {
+     .p-a-50 {
+  padding: 0px 45px 15px 45px;
+}
+.meta-single {
+    margin: 0 auto;
+}
     nav {
         padding-left: 0px;
         padding-right: 0px;
@@ -81,6 +103,14 @@ a, a:hover, a:active, a:focus {
 	        line-height: 1.56;
         }
     }
+    article.row {
+        .category-style {
+            font-size: 12px;
+        }
+        .recent-post-title {
+            font-size: 36px;
+        }
+    }
     footer {
         small {
             font-family: $font;
@@ -89,23 +119,166 @@ a, a:hover, a:active, a:focus {
             letter-spacing: 0.2px;
         }
     }
+    #firstNewsleter .container .row .col-md-12 {
+        flex-direction: column;
+    }
+        .cards-play {
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+
+}
+.site-main {
+    article:nth-child(1) {
+        .content-geral {
+            box-shadow: 0px 5px 40px 0 rgba(0, 62, 93, 0.12);
+        }
+
+    }
+}
+
 }
 
 
 
 @media only screen and (min-width: $sm) {
+   
+     article.row {
+        .category-style {
+            font-size: 12px;
+            padding-top: 20px;
+        }
+        .recent-post-title {
+            font-size: 32px;
+        }
+    }
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+        margin-left: -30px;
+    }
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+           margin-right: -30px;
+    }
+    section {
+        p {
+            font-size: 14px;
+        }
+    }
+    .cards-play {
+      display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 30px;
+        padding-left: 0;
+}
+.site-main {
+    article:nth-child(1) {
+        .content-geral {
+            box-shadow: initial;
+            &:hover {
+                    box-shadow: 0 12px 60px hsla(0,0%,4%,.3);
+            }
+        }
+
+    }
+}
+#faq .container .row div{
+    padding: 20px 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#faq .container .row div.col-md-12 {
+    justify-content: start;
+}
+.social-media-icons {
+    position: fixed;
+    top: 300px;
+}
 }
 
 @media only screen and (max-width: $sm) {
-   
+    .content-title {
+    padding: 0px 45px 15px 45px;
 }
-@media only screen and (max-width: $md) {
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+       margin-left: 0px;
+   }
+.content-data {
+    padding-left: 20px;
+    margin-bottom: 30px; 
+    
+}
+.social-media-icons {
+position: relative;
+top: 0;
 
 }
+.featured-image-thumb {
+      max-height: 245px;
+    width: 100%;
+}
+   #firstNewsleter .container {
+        padding: 40px 0px;
+    }
+    .b-email {
+        width: 100%;
+    }
+    .i-email {
+        width: 100%;
+    }
+        .app-store-bp {
+  text-align: center;
+}
+
+.button-store {
+    margin-top: 20px;
+}
+header {
+    h1 {
+        font-size: 30px;
+    }
+}
+#faq .container .row div {
+    padding: 15px 15px 10px;
+}
+.rodape {
+    display: block !important;
+    border-top: none !important;
+}
+}
+
+@media only screen and (max-width: $md) {
+  .recent-post-le {
+            line-height: 1.21;
+        }
+}
 @media only screen and (min-width: $md) {
+
+       section {
+             p {
+            font-size: 14px; 
+                .title-cat {
+font-size: 12px;
+                }
+        }
+       }
+    #firstNewsleter .container {
+        padding: 40px 0px;
+    }
+    #firstNewsleter .container .row .col-md-12 {
+        flex-direction: row;
+    }
+  
   
 }
 
-@media only screen and (min-width: $lg) {
 
+@media only screen and (min-width: $lg) {
+    #firstNewsleter .container .row .col-md-12 {
+        flex-direction: row;
+    }
+    #faq .container .row div {
+            min-height: 85px;
+    }
 }
