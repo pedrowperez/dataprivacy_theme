@@ -13,77 +13,20 @@ transition: $transition;
 }
 
 .carousel {
-height: inherit;
+height: 100vh;
 } 
-.carousel-inner > .item.next.left, .carousel-inner > .item.prev.right, .carousel-inner > .item.active
-{
-    opacity: 0.4;
--webkit-filter: blur(4px);
-filter: blur(5px);
-}
-.carousel-inner {
-height: 100%;
-}
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-height: 540px;   max-width: 1090px;
-}
-.form-group {
-display: flex !important;
-align-items: center;
-justify-content: flex-end;
+.form-control:focus {
+
+    box-shadow: none;
 }
 .item {
-overflow: hidden;
-height: 100%;
-img {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100vh;
 }
-}
-.carousel-inner {
-    background: #0e5977;
-    
-}
-.carousel-inner img {
-margin: auto;
-
-}
-.carousel-indicators {
-width: 100%;
-margin-left: 0;
-left: 0; 
-top: 100px;
-padding: 0px 30px;
-}
-.carousel-indicators .active    {
-        width: 100%;
-        height: auto;
-        background-color: transparent;
-
-
-}
-.carousel-indicators ol {
-display: inline-flex;
-}
-.carousel-indicators li {
-    text-indent: unset;
-width: 100%;
-height: auto;
-border: none;
-padding: 15px;
-font-size: 18px;
-text-align: left;
-    line-height: 1.7;
-
-}
-.carousel-indicators li a {
-color: white;
-
-}
-.carousel-indicators li:hover {
-
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    max-width: none;
+    height: auto;
+    line-height: 1;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
@@ -108,7 +51,7 @@ color: blue;
     float: right;
 }
  .navbar-default .navbar-nav > li > a {
-    font-size: 12px;
+    font-size: 14px;
 }
 }
 @media only screen and (max-width: $sm) {
@@ -126,9 +69,7 @@ color: blue;
     opacity: 1;
     color: white;
 }
-.nav > li {
-    display: block !important;
-}
+
 
 
 }

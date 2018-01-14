@@ -19,10 +19,19 @@
     }
 }
 
+
+
 @include defineColor('white', $white);
 @include defineColor('white-scale', $white-scale);
 @include defineColor('grey-scale', $grey-scale);
 @include defineColor('greyban', $greyban);
 @include defineColor('bluegreen', $bluegreen);
 @include defineColor('greenclue', $greenclue);
+@include defineColor('grey-dark', $grey-dark);
 @include defineColor('grey', $grey);
+@include defineColor('orange', $orange);
+@include defineColor('purple', $purple);
+@include defineColor('yellow', $yellow);
+@include defineColor('pink', $pink);
+
+

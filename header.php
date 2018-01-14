@@ -19,12 +19,12 @@
     </head>
 
     <body>
-        <nav id="mainNav" class="navbar navbar-default navbar-blue">
-            <div class="container p-a-0">
+        <nav id="mainNav" class="navbar navbar-default navbar-blue  pt-sm-10 pb-sm-5">
+            <div class="container-fluid p-a-0">
                 <div class="navbar-left">
 
                     <a class="navbar-brand m-l" href="<?= get_home_url() ?>">
-                                <img src="<?= $home; ?>/assets/img/logo.png"> </a>
+                                <img src="<?= $home; ?>/assets/img/logo.svg"> </a>
 
                     <div class="col-xs-12 col-sm-12 hidden-sm hidden-md hidden-lg align-item teste">
                         <button class="search-button"> </button>

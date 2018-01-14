@@ -1,0 +1,18 @@
+<svg width="12" height="12" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>icon_time</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-89 -1479)">
+<g id="icon_time">
+<g id="Vector">
+<use xlink:href="#path0_fill" transform="translate(89 1479)" fill="#56C5D0"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_fill" transform="translate(94.4 1482)" fill="#56C5D0"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 5.994 0C 2.682 0 0 2.688 0 6C 0 9.312 2.682 12 5.994 12C 9.312 12 12 9.312 12 6C 12 2.688 9.312 0 5.994 0ZM 6 10.8C 3.348 10.8 1.2 8.652 1.2 6C 1.2 3.348 3.348 1.2 6 1.2C 8.652 1.2 10.8 3.348 10.8 6C 10.8 8.652 8.652 10.8 6 10.8Z"/>
+<path id="path1_fill" d="M 0.9 0L 0 0L 0 3.6L 3.15 5.49L 3.6 4.752L 0.9 3.15L 0.9 0Z"/>
+</defs>
+</svg>

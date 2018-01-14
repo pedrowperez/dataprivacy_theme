@@ -16,19 +16,38 @@ while ( have_posts() ) : the_post(); ?>
 
     <div class="container" id="pagecontent" tabindex="-1">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-xs-12">
+                <a href="<?php the_permalink();?>">
+                            <?php 
+                  if(get_the_post_thumbnail($value->ID)) 
+                  {
+                        echo get_the_post_thumbnail($value->ID, $size = 'post-thumbnail', array( 'class' => 'img-responsive' ));
+                  }
+                  else 
+                  {
+                    ?>
+                            <img src="http://via.placeholder.com/650x400" alt="" />
+                            <?php } ?>
+
                 <div class="intro-text">
-                    <h1 class="name-title">
-                        <?php the_title(); ?>
-                    </h1>
-                    <p>
-                        <?php the_content(); ?> </p>
+                        <?php the_content(); ?>
                 </div>
             </div>
         </div>
     </div>
 
-
+<section id="idealizadores">
+  <div class="container">
+  <div class="row">
+    <div class="col-xs-5 col-xs-offset-1">
+    
+    </div>
+    <div class="col-xs-5 col-xs-offset-1">
+    
+    </div>
+  </div>
+  </div>
+</section>
 
 
 

@@ -1,67 +1,104 @@
-<?php get_header(); ?>
-<?php    $bg_color = array( 2 => "bgc-roxocat" , 3 => "bgc-bluecat", 4 => "bgc-orangecat", 5 => "bgc-greencat");
- $class_color = array( 2 => "c-roxocat" , 3 => "c-bluecat", 4 => "c-orangecat", 5 => "c-greencat");
- add_filter( 'the_title', 'max_title_length'); ?>
-<main class="home-main pt-md-100">
-    <div class="container">
-    <div class="box-cat pt-md-50 pb-md-50 pt-xs-90 pb-xs-20">
-        <?php $categoria = get_the_category()[0]; ?>
-                        <p class="<?= $bg_color[$categoria->term_id] ?> upper cat-single">
-                            <?= $categoria->name ?> </p> 
+<?php 
+get_header();
+?>
+
+<main class="recentPOST pt-md-100">
+    <div class="col-xs-12 col-sm-6 p-a-0">
+        <div class="img-header-blog">
+            <h1 class="hidden-xs title-geral-desk"> <?php the_title(); ?> </h1>
+            <?php
+            if(get_the_post_thumbnail($value->ID)) 
+                    {
+                            echo get_the_post_thumbnail($value->ID, $size = 'post-thumbnail');
+                    }
+                    else 
+                    {
+                ?>
+                                <img src="http://via.placeholder.com/650x400" alt="" />
+                                <?php } ?>
         </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 mt-xs--35 mt-sm--200 content-blog-category">
+        <?php
+            $the_query = new WP_Query( array(
+                'category_name' => 'blog',
+                'posts_per_page' => 4
+            )); 
+
+            if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); 
+?>
         
-        <div class="row">
-            <?php 
-           
-        $i = 1;
-        if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-        ?>
-        
-           <article class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-md-offset-0 col-sm-6 col-md-4 post">
-                <div class="content-geral">
-                    <div class="content-image">
-                        <a href="<?php the_permalink();?>">
-                            <?php 
-                  if(get_the_post_thumbnail($value->ID)) 
-                  {
-                        echo get_the_post_thumbnail($value->ID, $size = 'post-thumbnail', array( 'class' => 'featured-image-thumb' ));
-                  }
-                  else 
-                  {
-            ?>
-                            <img src="http://via.placeholder.com/650x400" alt="" />
-                            <?php } ?>
-                        </a>
+        <article class="col-xs-6 col-sm-10 col-sm-offset-1 mb-xs-30 mt-sm-30 mb-sm-30 bgc-white post post_type-blog p-a-0">
+                <div class="geral-blog">
+                    <div class="img-blog col-sm-5">
+                        <?php
+                        if(get_the_post_thumbnail($value->ID)) 
+                        {
+                        echo get_the_post_thumbnail($value->ID, $size = 'post-thumbnail');
+                        }
+                        else 
+                        {
+                        ?>
+                        <img src="http://via.placeholder.com/650x400" alt="" />
+                        <?php } ?>
                     </div>
-                    <div class="content-meta">
-                        <?php $categoria = get_the_category()[0]; ?>
-                        <p class="<?= $class_color[$categoria->term_id] ?> upper">
-                            <?= $categoria->name ?> </p> 
-                    </div>
-                    <div class="content-title  p-a-50">
-                        <h3>
-                            <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-                                <?= max_title_length(get_the_title() , 75); ?>
-                            </a>
-                        </h3>
-                          <?php the_excerpt(); ?> 
-                         <p class="recent-post-le"> <a href="<?php the_permalink(); ?>">
-                                        Leia mais </a> </p>
-                    </div>
-                    <div class="content-data">
-                        <small>
-                            <?php the_time( get_option( 'date_format' ) ); ?> | Por
-                            <?php the_author_posts_link() ?>
-                        </small>
+                    <div class="col-sm-7 hidden-xs p-a-50">
+                        <p class="data-box-archive-blog bgc-bluegreen c-white"> <strong> Por: <?=  the_author(); ?> </strong> </p>
+                        <a href="#modal-blog-<?= the_ID(); ?>" data-toggle="modal"><h1 class="c-grey-dark"> <strong> <?php the_title(); ?> </strong> </h1> </a>
+                        <p class="c-grey-dark"> <?php the_excerpt(); ?> </p>
                     </div>
 
+                    <div class="visible-xs">
+                    <a href="#modal-blog-<?= the_ID(); ?>" data-toggle="modal" class="blog-a-1"> <h1 class="c-dark-dark">
+                    <?= max_title_length(get_the_title()); ?></h1> </a>
+
+                    <a href="#modal-blog-<?= the_ID(); ?>" data-toggle="modal" class="blog-a-2 bgc-white">  
+                    <?= the_excerpt(); ?> </a> 
+                    </div>
                 </div>
-            </article>
+        </article>
 
-            <?= $i % 3 == 0 ? '<div class="col-xs-12 visible-md visible-lg"></div>' : "" ?>
+    <div id="modal-blog-<?= the_ID(); ?>" class="modal fade modal-single" hidden tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div id="post-<?php the_ID(); ?>" class="single-post">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 p-a-0 mt-xs-80">
+                    <div class="img-single-post mt-xs-60 mt-sm-0">
+                    <h1 class="hidden-xs title-geral-desk"> <?php the_title(); ?> </h1>
+            
+            
+                <?php
+                if(get_the_post_thumbnail($value->ID)) 
+                        {
+                            echo get_the_post_thumbnail($value->ID, $size = 'post-thumbnail');
+                        }
+                        else 
+                        {
+                ?>
+                                <img src="http://via.placeholder.com/650x400" alt="" />
+                                
+                                <?php } ?>
+                    </div>
+                </div>
+  
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 bgc-white content-single-generic mt-sm-80 p-a-0">
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-12 icon-up">
+                        <a href="http://dataprivacy.com.br/dev/category/blog/">
+                            <img src="http://dataprivacy.com.br/dev/wp-content/uploads/2018/01/icon_up.png"> </a>
+                    </div>
+    
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 pb-xs-30">
+                        <h1 class="c-grey-dark"> <strong><?php the_title(); ?></strong> </h1>
+                        <?php the_content(); ?>
+                        
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+                        <?php comments_template(); ?>
+                        </div>
+                </div>
+        </div>
+    </div>
 
-                <?php $i++; endwhile; ?> 
-                
+                <?php endwhile; ?> 
+                  
                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <?php
                 $paginateArgs = array(
@@ -83,25 +120,11 @@
                 <p>
                     <?php _e('Desculpe, nao foi localizado nenhum post.'); ?>
                 </p>
+            
                 <?php endif; ?>
-
-        </div>
+            </div>
     </div>
 </main>
-
-  <article class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 hidden-lg hidden-md hidden-sm mb-xs-30">
-                <div class="content-geral-m">
-                <h3 class="text-center pt-xs-10 pb-xs-10">Quer promoções exclusivas e dicas especiais? </h3>
-                    <form method="post" action="http://blog.bepay.com/?na=s" onsubmit="return newsletter_check(this)" class="form-inline">
-                    <div class="form-inline-m">
-                        <input class="i-email-m" type="email" name="ne" required placeholder="Assine nossa newsletter!">
-                        <input class="b-email-m" type="submit" value="">
-                    </div>
-                    </form>
-                </div>
-            </article>
-
-<?php include('newsletter.php'); ?>
 
 
 <?php get_footer(); ?>

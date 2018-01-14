@@ -1,6 +1,6 @@
 $( document ).ready( function ()
 {
-
+    
     // $( '#form-newslatetr' ).submit( function ( e )
     // {
     //     e.preventDefault();
@@ -21,6 +21,28 @@ $( document ).ready( function ()
     // var goto = parseInt( $( this ).attr( 'data-post-view' ) );
     // $( "#carousel-id" ).carousel( goto );
     // } );
+    $('.contato').click( function () {
+        $('#modal-contato').toggle();
+        
+    } );
+    
+   
+    $('#about-btn-bruno').click( function () {
+        $('#modal-bruno').fadeIn();
+        $('#modal-renato').fadeOut();
+        
+    } );
+    $('#modal-bruno').click(function () {
+        $(this).fadeOut();
+    });
+    $('#about-btn-renato').click( function () {
+        $('#modal-renato').fadeIn();
+        $('#modal-bruno').fadeOut();
+        
+    } );
+    $('#modal-renato').click(function () {
+        $(this).fadeOut();
+    });
 
     $( window ).scroll( function ()
     {
@@ -54,6 +76,7 @@ $( document ).ready( function ()
             functionT();
         }
     } );
+
     // $( '#carousel-id' ).on( 'slid', function ()
     // {
     //     alert( "Slide Event" );
@@ -76,8 +99,8 @@ $( document ).ready( function ()
     //     $( '.navbar-blue .navbar-collapse' ).not( this ).collapse( 'hide' );
     // } );
 
-    $( '.font-weight' ).prepend( '<a class="account-button-white hidden-sm hidden-md hidden-lg" href= "http://portal.bepay.com/#/register" > CRIE SUA CONTA </a > <hr class="hidden-sm hidden-md hidden-lg hr-menu">' );
-    $( '.font-weight' ).append( '<div class="menu-social hidden-md hidden-sm hidden-lg pt-xs-20"><a href="https://www.youtube.com/channel/UCDBomv5XGNncUrYYyYU4LSw" target="_blank" class="menu-social-yout mr-menu"> </a> <a  href="https://www.linkedin.com/company/bepay_oficial" target="_blank" class="menu-social-linkedin mr-menu"> </a><a  href="https://www.facebook.com/bepayapp/" target="_blank" class="menu-social-fb mr-menu"> </a> <a  href="https://www.instagram.com/paguecombepay/" target="_blank" class="menu-social-instagram mr-menu"> </a></div>' );
+    $( '.font-weight' ).prepend( '<a class="arealuno-button-white visible-xs" href= "#" > Área do aluno </a >' );
+    $( '.font-weight' ).append( '<div class="menu-social visible-xs pt-xs-30"><a href="https://mobile.twitter.com/dataprivacybr" target="_blank" class="menu-social-yout mr-menu"> </a> <a  href="https://m.facebook.com/DataPrivacy.br/" target="_blank" class="menu-social-linkedin mr-menu"> </a></div><div class="box-terms mt-xs-10"><a class="terms" href="http://dataprivacy.com.br/dev/user_term/" target=""_blank> Termos de uso </a> | <a class="terms" href="http://dataprivacy.com.br/dev/policy_privacy/" target=""_blank> Política de privacidade </a> </div>' );
 
     $( document ).on( 'click', '.teste .off', function ( e )
     {

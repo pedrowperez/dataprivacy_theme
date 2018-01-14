@@ -1,12 +1,15 @@
-<?php 
 
-    $class_color = array( 2 => "c-roxocat" , 3 => "c-bluecat", 4 => "c-orangecat", 5 => "c-greencat");
-    // add_filter( 'the_title', 'max_title_length_recent');
-?>
 
-<section id="recentPOST">
+
+
+
+
+
+
+<section id="recentPOST" class="visible-xs">
     <?php
    $the_query = new WP_Query( array(
+      'post_type' => 'cursos',
       'posts_per_page' => 1,
    )); 
    if ( $the_query->have_posts() ) :
@@ -26,31 +29,34 @@
                             <?php } ?>
                         </a>
 
-        <div class="container">
-            <article class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-0 col-md-12">
-                   
-                        <?php $categoria = get_the_category()[0]; ?>
-                        <p class="<?= $class_color[$categoria->term_id] ?> upper category-style">
-                            <?= $categoria->name ?>
-                        </p>
-                        <h1 class="recent-post-title">
-                            <a href="<?php the_permalink();?>">
-                                <?= max_title_length(get_the_title()); ?> </a>
-                        </h1>
+        <div class="container p-a-0">
+            <div class="row mt-xs-170">
+               
+           <article class="col-xs-10 col-xs-offset-1 post bgc-white cat-couse">
+            
+                    
+           <div class="content-cursos-archive">     
+           <?php $categoria = get_the_category()[0]; ?>
+           <p class="category-style c-grey-dark">
+               <?= $categoria->name ?>
+           </p>
+           <a href="#modal-cursos-<?= the_ID(); ?>" data-toggle="modal"> <h1 class="c-dark-dark">
+            <strong> <?= max_title_length(get_the_title()); ?> </strong> </h1> </a>
+   
+           <p class="recent-post-content c-greenclue visible-xs"><?=  get_post_meta(get_the_ID(), 'data_evento', true) ?> </p>
+               
+               <a href="#modal-cursos-<?= the_ID(); ?>" data-toggle="modal" >  <p class="recent-post-info bgc-white-scale pt-xs-10">
+               Clique aqui para maiores informações </p> </a> 
+                       </div>
+           
 
-                        <p class="recent-post-content"><?=  get_the_excerpt(); ?></p>
-                            
-                            <p class="recent-post-info bgc-white-scale pt-xs-10"> <a href="<?php the_permalink(); ?>">
-                            Clique aqui para maiores informações </a> </p>
-                   
-                </div>
-
+              
+            </article>
                 <?php endwhile; ?>
                 <?php wp_reset_postdata(); ?>
                 <?php else : ?>
                 <?php endif; ?>
-            </article>
+            </div>
             </article>
         </div>
 </section>

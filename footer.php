@@ -1,30 +1,38 @@
-<?php wp_footer(); ?>
+<div id="modal-contato" class="col-sm-4 col-sm-offset-4 mt-sm-100 bgc-white" hidden>
+         <div class="modal-body-contato bgc-white">     
+        
+     <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0">
+         <?php if ( $_SERVER['REQUEST_METHOD'] == "POST" ){
+send_contact_form();            
+} else {  ?>
+         <form action="" method="POST" class="form-horizontal" role="form">
+                 
+             <h1 class="c-dark-dark pb-xs-10"> <strong> Contato </strong> </h1>
 
-<footer class="rodape">
-    <div class="container">
+             <small> Caso tenha qualquer dúvida ou sugestão sobre o
+Data Privacy.br, nossos cursos e conteúdo, por favor, não
+hesite em entrar em contato conosco. Estamos à disposição. </small>
 
-        <div class="row">
-            <div class="col-lg-12">
-                <p class="f-r-md f-r-sm hidden-xs">
-                    <a href="https://www.youtube.com/channel/UCDBomv5XGNncUrYYyYU4LSw" target="_blank" class="footer-icons footer-yout"> </a>
-                    <a href="https://www.linkedin.com/company/bepay_oficial" target="_blank" class="footer-icons footer-linkedin"> </a>
-                    <a href="https://www.facebook.com/bepayapp/" target="_blank" class="footer-icons footer-fb"> </a>
-                    <a href="https://www.instagram.com/paguecombepay/" target="_blank" class="footer-icons footer-inst"> </a>                    
-                </p>
-                <p class="f-l-md f-l-sm hidden-xs">
-                    <a href="http://blog.bepay.com/wp-content/uploads/2017/11/privacidade_e_termos.pdf">   Privacidade & Termos </a>
-                </p>
+<div class="form-group pt-xs-20">
+<input type="text" name="" class="form-control" required="required" placeholder="Nome">
+</div>
+<div class="form-group">
+<input type="email" name="" class="form-control" value="" required="required" title="" placeholder="E-mail">
+</div>
+<div class="form-group"> 
+<textarea name="" class="form-control" rows="3" required="required" placeholder="Mensagem"></textarea>
 
-                <p class="text-center">
-                    BePay 2017 - Todos os direitos reservados.
-                </p>
-
-                
-
-            </div>
-        </div>
+</div>
+                 <div class="form-group">
+                         <button type="submit" class="btn w-100 bgc-greenclue">Enviar</button>
+                 </div>
+         </form>
+<?php } ?>
+     </div>
+      </div>
     </div>
-</footer>
+
+<?php wp_footer(); ?>
 
 
 </body>
